@@ -1,11 +1,5 @@
 # Detecting Endotracheal Tube and Carina on Portable Supine Chest Radiographs using One-Stage Detector with a Coarse-To-Fine Attention
 
-<style>
-.red {
-  color: #F60404;
-}
-</style>
-
 ## **Folder structure**
 ```
 ├── README.md                | 
@@ -13,7 +7,7 @@
 ├── classes.txt              | 
 ├── coco_eval.py             | evaluate detection result in coco format
 ├── detect_ccy.py            | detect malposition, saving detection result and summary   
-├── resnet50.pth             | 
+├── resnet50.pth             | download from pytorch
 ├── run_all.py               | integrate the commands    
 ├── toanno.py                | generate annotations
 ├── train_coco.py            | training 
