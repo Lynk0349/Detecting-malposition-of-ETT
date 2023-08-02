@@ -1,23 +1,23 @@
-from genericpath import isdir
-
-from scipy.fftpack import ss_diff
+import os
 import cv2
-from model.fcos import FCOSDetector
-import torch
-from torchvision import transforms
-import numpy as np
-import time
-import  matplotlib.pyplot as plt
-from matplotlib.ticker import NullLocator
-from coco_eval import COCOGenerator
 import math
-import statistics
-from openpyxl import Workbook
+import time
+import torch
 import pydicom
-
-from skimage import morphology
-from tqdm import tqdm
 import argparse
+import statistics
+import numpy as np
+import matplotlib.pyplot as plt
+
+from tqdm import tqdm
+from openpyxl import Workbook
+from skimage import morphology
+from torchvision import transforms
+from genericpath import isdir
+from scipy.fftpack import ss_diff
+from coco_eval import COCOGenerator
+from model.fcos import FCOSDetector
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--test_folder", type=str, default=None, help="where is your test folder")
@@ -117,9 +117,6 @@ if __name__=="__main__":
     model = model.cuda().eval()
     print("===>success loading model")
 
-    # print(model)
-
-    import os
     root=opt.test_folder
     names=os.listdir(root)
     generator=COCOGenerator(opt.test_folder, opt.anno_file, dcm=True)

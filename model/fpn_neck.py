@@ -1,6 +1,8 @@
 import torch.nn as nn
 import torch.nn.functional as F
+
 from model.util import Spatial_att, CCAM
+
 
 class FPN(nn.Module):
     '''only for resnet50,101,152'''

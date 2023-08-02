@@ -1,6 +1,8 @@
+import torch
+
 from model.fcos import FCOSDetector
 from thop import profile
-import torch
+
 
 model=FCOSDetector(mode="inference")
 model = model.to("cuda:0")

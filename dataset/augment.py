@@ -1,5 +1,5 @@
+import math
 import torch
-import math, random
 import random
 import torchvision.transforms as transforms
 

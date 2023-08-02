@@ -1,7 +1,7 @@
-import torch.nn as nn
-import torch.utils.model_zoo as model_zoo
 import math
 import torch
+import torch.nn as nn
+import torch.utils.model_zoo as model_zoo
 
 __all__=['resnet18', 'resnet34', 'resnet50', 'resnet101','resnet152']
 

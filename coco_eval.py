@@ -1,16 +1,18 @@
-from pycocotools.cocoeval import COCOeval
-import numpy as np
+import os
+import cv2
 import json
+import torch
+import pydicom
+import argparse
+import numpy as np
+
+from PIL import Image
 from tqdm import tqdm
+from pycocotools.cocoeval import COCOeval
 from torchvision.datasets import CocoDetection
 from torchvision import transforms
-import cv2
 from model.fcos import FCOSDetector
-import torch
-from PIL import  Image
-import pydicom
-import os
-import argparse
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--test_folder", type=str, default=None, help="where is your test folder")

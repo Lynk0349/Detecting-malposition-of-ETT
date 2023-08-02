@@ -1,10 +1,11 @@
 
 import torch
 import torch.nn as nn
-from .config import DefaultConfig
-
-from torch.nn import CrossEntropyLoss
 import torch.nn.functional as F
+
+from .config import DefaultConfig
+from torch.nn import CrossEntropyLoss
+
 
 def coords_fmap2orig(feature,stride):
     '''

@@ -1,10 +1,12 @@
-from .head import ClsCntRegHead, SegHead_w_fusion
-from .fpn_neck import FPN
-from .backbone.resnet import resnet50
-import torch.nn as nn
-from .loss import GenTargets,LOSS,coords_fmap2orig, Mask_loss
 import torch
+import torch.nn as nn
+
 from .config import DefaultConfig
+from .backbone.resnet import resnet50
+from .fpn_neck import FPN
+from .head import ClsCntRegHead, SegHead_w_fusion
+from .loss import GenTargets,LOSS,coords_fmap2orig, Mask_loss
+
 
 class FCOS(nn.Module):
     
@@ -18,6 +20,7 @@ class FCOS(nn.Module):
                                 config.use_GN_head,config.cnt_on_reg,config.prior)
         self.seg_head=SegHead_w_fusion(in_channel=config.fpn_out_channels, out_channel=5)
         self.config=config
+
     def train(self,mode=True):
         '''
         set module training mode, and frozen bn
@@ -63,6 +66,7 @@ class DetectHead(nn.Module):
             self.config=DefaultConfig
         else:
             self.config=config
+            
     def forward(self,inputs):
         '''
         inputs  list [cls_logits,cnt_logits,reg_preds]  

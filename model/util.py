@@ -1,6 +1,6 @@
 import torch
-from torch import nn
 
+from torch import nn
 
 
 class Conv_Bn_Activation(nn.Module):
